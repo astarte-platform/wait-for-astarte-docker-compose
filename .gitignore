@@ -1,0 +1,5 @@
+# Build artifacts
+wait-for-astarte-docker-compose
+wait-for-astarte-docker-compose_*
+.gobuild
+dist/
