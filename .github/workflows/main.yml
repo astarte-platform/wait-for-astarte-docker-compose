@@ -1,0 +1,37 @@
+name: Build and Test
+on:
+  # Run on mainline branches
+  push:
+      - 'master'
+      - 'release-*'
+  # Run on branch/tag creation
+  create:
+  # Run on Pull Requests
+  pull_request:
+
+jobs:
+  build:
+    name: Build and Test
+    strategy:
+      matrix:
+        go: [1.13.x, 1.14.x]
+        os: [ubuntu-18.04, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Set up Go ${{ matrix.go }}
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go }}
+      id: go
+
+    - uses: actions/checkout@v2
+
+    - name: Check gofmt
+      run: diff -u <(echo -n) <(gofmt -d .)
+      if: matrix.os != 'windows-latest'
+
+    - name: Run go vet
+      run: go vet $(go list ./... | grep -v /vendor/)
+
+    - name: Build
+      run: go build -v .
