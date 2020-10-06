@@ -2,8 +2,8 @@ name: Build and Test
 on:
   # Run on mainline branches
   push:
-      - 'master'
-      - 'release-*'
+  - 'master'
+  - 'release-*'
   # Run on branch/tag creation
   create:
   # Run on Pull Requests
