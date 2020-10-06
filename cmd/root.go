@@ -50,6 +50,7 @@ var serviceToBaseUrl = map[string]string{
 	"Realm Management":     "http://localhost:4006",
 	"Trigger Engine":       "http://localhost:4007",
 	"Housekeeping":         "http://localhost:4008",
+	"VerneMQ":              "http://localhost:8888",
 }
 
 func Execute() {
