@@ -12,8 +12,8 @@ with
 ./wait-for-astarte-docker-compose
 ```
 
-The program will return `0` when all the services start succesfully or `1` if it there is a timeout.
+The program will return `0` when all services API start succesfully or `1` if it there is a timeout.
 The default timeout is 300 seconds, a different timeout can be specified with the `-t` flag.
 
-The program expects all Astarte services to be served on the default ports specified in the
+The program expects all Astarte services to be exposed on the default host specified in the
 `docker-compose` file.

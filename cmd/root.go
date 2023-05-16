@@ -41,16 +41,10 @@ and the rest of the script has to wait for Astarte to be ready`,
 var timeoutSeconds int
 
 var serviceToBaseUrl = map[string]string{
-	"Realm Management API": "http://localhost:4000",
-	"Housekeeping API":     "http://localhost:4001",
-	"AppEngine API":        "http://localhost:4002",
-	"Pairing API":          "http://localhost:4003",
-	"Data Updater Plant":   "http://localhost:4004",
-	"Pairing":              "http://localhost:4005",
-	"Realm Management":     "http://localhost:4006",
-	"Trigger Engine":       "http://localhost:4007",
-	"Housekeeping":         "http://localhost:4008",
-	"VerneMQ":              "http://localhost:8888",
+	"Realm Management API": "http://api.astarte.localhost/realmmanagement",
+	"Housekeeping API":     "http://api.astarte.localhost/housekeeping",
+	"AppEngine API":        "http://api.astarte.localhost/appengine",
+	"Pairing API":          "http://api.astarte.localhost/pairing",
 }
 
 func Execute() {
